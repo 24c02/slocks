@@ -25,7 +25,7 @@ bundle install
 
 ## Quick Start
 
-Create a template.
+Create a template with the **.slack_blocks** extension.
 
 ```ruby
 # app/views/notifications/order_shipped.slack_blocks
@@ -59,7 +59,7 @@ class OrdersController < ApplicationController
     
     slack_client.chat_postMessage(
       channel: @user.slack_id,
-      **JSON.parse(payload)
+      **JSON.parse(payload, symbolize_names: true)
     )
   end
 end
@@ -315,7 +315,7 @@ modal_json = render_to_string(
 
 slack_client.views_open(
   trigger_id: params[:trigger_id],
-  view: JSON.parse(modal_json)
+  view: JSON.parse(modal_json, symbolize_names: true)
 )
 ```
 
