@@ -9,8 +9,8 @@ module Slocks
         require "slocks/action_view_monkeys"
         require "slocks/template_handler"
         
-        Mime::Type.register "application/json", :slack_message
-        Mime::Type.register "application/json", :slack_modal
+        Mime::Type.register "application/vnd.slack.message+json", :slack_message
+        Mime::Type.register "application/vnd.slack.modal+json", :slack_modal
         
         ActionView::Template.register_template_handler(:slocks, Slocks::TemplateHandlerDispatcher)
       end
