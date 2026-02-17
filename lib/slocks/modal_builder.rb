@@ -20,6 +20,10 @@ module Slocks
       @callback_id = id
     end
 
+    def private_metadata(value)
+      @private_metadata = value.to_s
+    end
+
     def to_h
       modal = {
         type: "modal",
@@ -29,6 +33,7 @@ module Slocks
       }.compact
       modal[:submit] = { type: "plain_text", text: @submit_text } if @submit_text
       modal[:close] = { type: "plain_text", text: @close_text } if @close_text
+      modal[:private_metadata] = @private_metadata if @private_metadata
       modal
     end
   end

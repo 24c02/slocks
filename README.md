@@ -282,6 +282,7 @@ title "Send Feedback"
 submit "Submit"
 close "Cancel"
 callback "feedback_modal"
+private_metadata({ user_id: @user.id }.to_json)
 
 section "How was your experience?", markdown: true
 
