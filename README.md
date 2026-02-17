@@ -28,7 +28,7 @@ bundle install
 Create a template with the **.slack_blocks** extension.
 
 ```ruby
-# app/views/notifications/order_shipped.slack_blocks
+# app/views/notifications/order_shipped.slack_message.slocks
 
 header "📦 Your order has shipped!"
 
@@ -381,6 +381,6 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Credits
 
-built with <3️ by nora and various LLM-slop providers.
+built with <3 by nora and various LLM-slop providers.
 
 heavily inspired by Akira Matsuda's fantastic [JB](https://github.com/amatsuda/jb/) gem.
